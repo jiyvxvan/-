@@ -1,9 +1,20 @@
 #include<stdio.h>
 void s(int a[],int x,int y)
 {
-    int t;
-    t=a[x];
-    a[x]=a[y];
+    int t=a[y];
+    for(int i=y;i>=x+1;i--)
+    {
+        a[i]=a[i-1];
+    }
+    a[x]=t;
+}
+void sb(int a[],int x,int y)
+{
+     int t=a[x];
+    for(int i=x;i<=y-1;i++)
+    {
+        a[i]=a[i+1];
+    }
     a[y]=t;
 }
 void p(int a[],int n)
@@ -25,7 +36,7 @@ void z(int a[],int x,int y)
     {
         s(a,x,i);
         z(a,x+1,y);
-        s(a,x,i);
+        sb(a,x,i);
     }
 }
 
