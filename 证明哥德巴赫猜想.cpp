@@ -26,7 +26,7 @@ int main()
                if(zhi(q))
                {
                    printf("%d=%d+%d\n",i,j,q);
-                   break;
+                   
                }
            }
        }
